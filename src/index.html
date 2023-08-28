@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<title>Stencil Component Starter</title>
+
+<script type="module" src="/build/prueba-componente.esm.js"></script>
+<script nomodule src="/build/prueba-componente.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style>
+  .moreDetail {
+    text-decoration: none;
+    color: #06c;
+  }
+
+  .moreDetail i {
+    color: #06c;
+    font-size: 12px;
+  }
+
+  .moreDetail:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+
+<body>
+  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+  <!-- Componente padre -->
+  <!-- <button-component text="Transferir" color="#D2006E" (onButtonClicked)={}></button-component>
+<script>
+  const button = document.querySelector('button-component');
+  button.addEventListener('onButtonClicked', event => { console.log('Evento: ',event)})
+</script> -->
+
+
+  <!-- <custom-input
+  label="Ingresa un número mayor a 10:"
+  errorMessage="El número debe ser mayor a 10"
+  condition={(value) => parseFloat(value) > 10}
+  onInputChange={(event) => console.log("Valor ingresado:", event.detail)}
+></custom-input> -->
+  <!-- <advanced-form></advanced-form> -->
+
+
+  <st-card>
+    <st-card-header>
+      <span class="st-card-header-title">Apple UX</span>
+      <span class="st-card-header-subtitle">User Experience</span>
+    </st-card-header>
+
+    <st-card-content>
+      <span class="st-card-content">
+        Apple products work beautifully because our designers maintain an intense focus on simplicity and usability.
+        They judge the success of their work not by everything they put into it, but by everything the user gets out of
+        it.
+      </span>
+    </st-card-content>
+
+    <st-card-bottom>
+      <!-- <button-component text="Ver detalle" color="#D2006E"></button-component> -->
+      <a href="#" class="moreDetail">See more detail  <i class="bi bi-chevron-right"></i></a>
+      
+    </st-card-bottom>
+  </st-card>
+</body>
+
+</html>
