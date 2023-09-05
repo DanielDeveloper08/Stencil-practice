@@ -8,13 +8,13 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AdvancedForm {
     }
-    interface ButtonComponent {
+    interface BgButton {
         "color": string;
-        "text": string;
+        "label": string;
+        "styleclass": string;
     }
-    interface CustomInput {
+    interface BgInput {
         "condition": (value: string) => boolean;
-        "errorMessage": string;
         "label": string;
     }
     interface MyComponent {
@@ -31,13 +31,13 @@ export namespace Components {
     interface TsCardBottom {
     }
 }
-export interface ButtonComponentCustomEvent<T> extends CustomEvent<T> {
+export interface BgButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLButtonComponentElement;
+    target: HTMLBgButtonElement;
 }
-export interface CustomInputCustomEvent<T> extends CustomEvent<T> {
+export interface BgInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLCustomInputElement;
+    target: HTMLBgInputElement;
 }
 declare global {
     interface HTMLAdvancedFormElement extends Components.AdvancedForm, HTMLStencilElement {
@@ -46,17 +46,17 @@ declare global {
         prototype: HTMLAdvancedFormElement;
         new (): HTMLAdvancedFormElement;
     };
-    interface HTMLButtonComponentElement extends Components.ButtonComponent, HTMLStencilElement {
+    interface HTMLBgButtonElement extends Components.BgButton, HTMLStencilElement {
     }
-    var HTMLButtonComponentElement: {
-        prototype: HTMLButtonComponentElement;
-        new (): HTMLButtonComponentElement;
+    var HTMLBgButtonElement: {
+        prototype: HTMLBgButtonElement;
+        new (): HTMLBgButtonElement;
     };
-    interface HTMLCustomInputElement extends Components.CustomInput, HTMLStencilElement {
+    interface HTMLBgInputElement extends Components.BgInput, HTMLStencilElement {
     }
-    var HTMLCustomInputElement: {
-        prototype: HTMLCustomInputElement;
-        new (): HTMLCustomInputElement;
+    var HTMLBgInputElement: {
+        prototype: HTMLBgInputElement;
+        new (): HTMLBgInputElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -90,8 +90,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "advanced-form": HTMLAdvancedFormElement;
-        "button-component": HTMLButtonComponentElement;
-        "custom-input": HTMLCustomInputElement;
+        "bg-button": HTMLBgButtonElement;
+        "bg-input": HTMLBgInputElement;
         "my-component": HTMLMyComponentElement;
         "st-card": HTMLStCardElement;
         "st-card-content": HTMLStCardContentElement;
@@ -102,16 +102,16 @@ declare global {
 declare namespace LocalJSX {
     interface AdvancedForm {
     }
-    interface ButtonComponent {
+    interface BgButton {
         "color"?: string;
-        "onButtonClicked"?: (event: ButtonComponentCustomEvent<boolean>) => void;
-        "text"?: string;
-    }
-    interface CustomInput {
-        "condition"?: (value: string) => boolean;
-        "errorMessage"?: string;
         "label"?: string;
-        "onInputChange"?: (event: CustomInputCustomEvent<string>) => void;
+        "onButtonClicked"?: (event: BgButtonCustomEvent<boolean>) => void;
+        "styleclass"?: string;
+    }
+    interface BgInput {
+        "condition"?: (value: string) => boolean;
+        "label"?: string;
+        "onInputChange"?: (event: BgInputCustomEvent<string>) => void;
     }
     interface MyComponent {
         "first"?: string;
@@ -128,8 +128,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "advanced-form": AdvancedForm;
-        "button-component": ButtonComponent;
-        "custom-input": CustomInput;
+        "bg-button": BgButton;
+        "bg-input": BgInput;
         "my-component": MyComponent;
         "st-card": StCard;
         "st-card-content": StCardContent;
@@ -142,8 +142,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "advanced-form": LocalJSX.AdvancedForm & JSXBase.HTMLAttributes<HTMLAdvancedFormElement>;
-            "button-component": LocalJSX.ButtonComponent & JSXBase.HTMLAttributes<HTMLButtonComponentElement>;
-            "custom-input": LocalJSX.CustomInput & JSXBase.HTMLAttributes<HTMLCustomInputElement>;
+            "bg-button": LocalJSX.BgButton & JSXBase.HTMLAttributes<HTMLBgButtonElement>;
+            "bg-input": LocalJSX.BgInput & JSXBase.HTMLAttributes<HTMLBgInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "st-card": LocalJSX.StCard & JSXBase.HTMLAttributes<HTMLStCardElement>;
             "st-card-content": LocalJSX.StCardContent & JSXBase.HTMLAttributes<HTMLStCardContentElement>;

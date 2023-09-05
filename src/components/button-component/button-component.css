@@ -3,12 +3,45 @@
 }
 
 .custom-button{
-  width: 100%;
+  width: auto;
   height: 50px;
-  color: white;
   font-size: 18px;
   padding: 15px 30px;
   border-radius: 8px;
   border:0px;
   cursor: pointer;
+  background-color: #F3F3F3;
+  color:rgba(0, 0, 0, 0.712);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover{
+   opacity: 0.82;
+}
+
+
+.btn-disabled{
+  background-color: #EDEDED;
+  color: #898989;
+}
+
+.btn-primary{
+  color: #FFFFFF;
+  background-color: #D2006E;
+}
+
+.w-50{
+  width: 50%;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.w-25{
+  width: 25%;
+}
+
+.w-20{
+  width: 20%;
 }

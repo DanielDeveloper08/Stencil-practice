@@ -9,16 +9,15 @@ export interface CarI{
 
 
 @Component({
-  tag: 'button-component',
+  tag: 'bg-button',
   styleUrl: 'button-component.css',
   shadow: true
 })
 export class MyButton {
-  @Prop() text: string;
-  @Prop() color: string = '#007bff';
+  @Prop() label: string;
+  @Prop() color: string;
+  @Prop() styleclass: string;
   @Event() buttonClicked: EventEmitter<boolean>;
-
-  constructor(){}
 
   async handleClick () {
     this.buttonClicked.emit(true);
@@ -26,9 +25,10 @@ export class MyButton {
 
   render() {
     return (
-      <button class="custom-button" 
+      <button class={`custom-button ${this.styleclass}`}
+      style={{backgroundColor: this.color}}
       onClick={() => this.handleClick()}>
-        {this.text} 
+        {this.label} 
       </button>
     );
   }
