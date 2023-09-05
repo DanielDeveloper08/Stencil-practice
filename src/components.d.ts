@@ -5,8 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CarI } from "./components/button-component/button-component";
-export { CarI } from "./components/button-component/button-component";
 export namespace Components {
     interface AdvancedForm {
     }
@@ -106,7 +104,7 @@ declare namespace LocalJSX {
     }
     interface ButtonComponent {
         "color"?: string;
-        "onButtonClicked"?: (event: ButtonComponentCustomEvent<CarI>) => void;
+        "onButtonClicked"?: (event: ButtonComponentCustomEvent<boolean>) => void;
         "text"?: string;
     }
     interface CustomInput {

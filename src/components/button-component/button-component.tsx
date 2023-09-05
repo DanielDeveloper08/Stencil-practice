@@ -16,18 +16,19 @@ export interface CarI{
 export class MyButton {
   @Prop() text: string;
   @Prop() color: string = '#007bff';
+  @Event() buttonClicked: EventEmitter<boolean>;
 
-  @Event() buttonClicked: EventEmitter<CarI>;
+  constructor(){}
 
-  handleClick() {
-    this.buttonClicked.emit({nombre: 'Ford Explorer',marca: 'Ford',traccion: '4x4'});
+  async handleClick () {
+    this.buttonClicked.emit(true);
   }
 
   render() {
     return (
-      <button class="custom-button" style={{ backgroundColor: this.color }} onClick={() => this.handleClick()}>
+      <button class="custom-button" 
+      onClick={() => this.handleClick()}>
         {this.text} 
-
       </button>
     );
   }
