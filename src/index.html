@@ -32,19 +32,19 @@
   <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
   <!-- Componente padre -->
   
-  <!-- <bg-button label="Iniciar Sesión" styleclass="w-50 btn-primary"></bg-button>
+  <bg-button label="Iniciar Sesión" styleclass="w-50 btn-primary" disabled="true"></bg-button>
 <script>
-  const button = document.querySelector('button-component');
-  button.addEventListener('onButtonClicked', event => { console.log('Evento: ',event)})
-</script> -->
+  const button = document.querySelector('bg-button');
+  button.addEventListener('onClick', event => { console.log('Evento: ',event)})
+</script>
 
 
-
+<!-- 
   <bg-input
   label="Ingresa un número mayor a 10:"
   errorMessage="El número debe ser mayor a 10"
   condition={(value) => parseFloat(value) > 10}
-  onInputChange={(event) => console.log("Valor ingresado:", event.detail)}></bg-input>
+  onInputChange={(event) => console.log("Valor ingresado:", event.detail)}></bg-input> -->
   <!-- <advanced-form></advanced-form> -->
 
 

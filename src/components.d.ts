@@ -10,6 +10,7 @@ export namespace Components {
     }
     interface BgButton {
         "color": string;
+        "disabled": boolean;
         "label": string;
         "styleclass": string;
     }
@@ -104,8 +105,9 @@ declare namespace LocalJSX {
     }
     interface BgButton {
         "color"?: string;
+        "disabled"?: boolean;
         "label"?: string;
-        "onButtonClicked"?: (event: BgButtonCustomEvent<boolean>) => void;
+        "onOnClick"?: (event: BgButtonCustomEvent<boolean>) => void;
         "styleclass"?: string;
     }
     interface BgInput {

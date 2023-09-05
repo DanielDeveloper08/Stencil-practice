@@ -1,4 +1,4 @@
-import { Component, h, State, Event, EventEmitter, Prop, Watch } from '@stencil/core';
+import { Component, h, State, Event, EventEmitter, Prop } from '@stencil/core';
 
 @Component({
   tag: 'bg-input',
@@ -12,11 +12,11 @@ export class CustomInput {
 
   @Event() inputChange: EventEmitter<string>;
 
-  @Watch('inputValue')
-  validateInput(newValue: string) {
-    if (this.condition) {
-    }
-  }
+  // @Watch('inputValue')
+  // validateInput(newValue: string) {
+  //   if (this.condition) {
+  //   }
+  // }
 
   handleInputChange(event: Event) {
     this.inputValue = (event.target as HTMLInputElement).value;

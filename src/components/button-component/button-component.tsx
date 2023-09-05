@@ -1,13 +1,6 @@
 import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 
-export interface CarI{
-  nombre: string;
-  marca: string;
-  traccion: string;
-}
-
-
 @Component({
   tag: 'bg-button',
   styleUrl: 'button-component.css',
@@ -17,18 +10,22 @@ export class MyButton {
   @Prop() label: string;
   @Prop() color: string;
   @Prop() styleclass: string;
-  @Event() buttonClicked: EventEmitter<boolean>;
+  @Prop() disabled: boolean;
+  @Event() onClick: EventEmitter<boolean>;
 
-  async handleClick () {
-    this.buttonClicked.emit(true);
+  handleClick () {
+    this.onClick.emit(true);
   }
 
   render() {
     return (
-      <button class={`custom-button ${this.styleclass}`}
-      style={{backgroundColor: this.color}}
-      onClick={() => this.handleClick()}>
-        {this.label} 
+      <button 
+        type=''
+        class={`custom-button ${this.styleclass}`}
+        style={{backgroundColor: this.color}}
+        disabled={this.disabled}
+        onClick={() => this.handleClick()}>
+          {this.label} 
       </button>
     );
   }

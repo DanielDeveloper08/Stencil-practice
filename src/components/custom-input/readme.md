@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                         | Default     |
-| -------------- | --------------- | ----------- | ---------------------------- | ----------- |
-| `condition`    | --              |             | `(value: string) => boolean` | `undefined` |
-| `errorMessage` | `error-message` |             | `string`                     | `undefined` |
-| `label`        | `label`         |             | `string`                     | `undefined` |
+| Property    | Attribute | Description | Type                         | Default     |
+| ----------- | --------- | ----------- | ---------------------------- | ----------- |
+| `condition` | --        |             | `(value: string) => boolean` | `undefined` |
+| `label`     | `label`   |             | `string`                     | `undefined` |
 
 
 ## Events
