@@ -6,8 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AdvancedForm {
-    }
     interface BgButton {
         "color": string;
         "disabled": boolean;
@@ -15,13 +13,10 @@ export namespace Components {
         "styleclass": string;
     }
     interface BgInput {
-        "condition": (value: string) => boolean;
-        "label": string;
-    }
-    interface MyComponent {
-        "first": string;
-        "last": string;
-        "middle": string;
+        "name": string;
+        "placeholder": string;
+        "styleclass": string;
+        "value": string;
     }
     interface StCard {
     }
@@ -41,12 +36,6 @@ export interface BgInputCustomEvent<T> extends CustomEvent<T> {
     target: HTMLBgInputElement;
 }
 declare global {
-    interface HTMLAdvancedFormElement extends Components.AdvancedForm, HTMLStencilElement {
-    }
-    var HTMLAdvancedFormElement: {
-        prototype: HTMLAdvancedFormElement;
-        new (): HTMLAdvancedFormElement;
-    };
     interface HTMLBgButtonElement extends Components.BgButton, HTMLStencilElement {
     }
     var HTMLBgButtonElement: {
@@ -58,12 +47,6 @@ declare global {
     var HTMLBgInputElement: {
         prototype: HTMLBgInputElement;
         new (): HTMLBgInputElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
     };
     interface HTMLStCardElement extends Components.StCard, HTMLStencilElement {
     }
@@ -90,10 +73,8 @@ declare global {
         new (): HTMLTsCardBottomElement;
     };
     interface HTMLElementTagNameMap {
-        "advanced-form": HTMLAdvancedFormElement;
         "bg-button": HTMLBgButtonElement;
         "bg-input": HTMLBgInputElement;
-        "my-component": HTMLMyComponentElement;
         "st-card": HTMLStCardElement;
         "st-card-content": HTMLStCardContentElement;
         "st-card-header": HTMLStCardHeaderElement;
@@ -101,8 +82,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface AdvancedForm {
-    }
     interface BgButton {
         "color"?: string;
         "disabled"?: boolean;
@@ -111,14 +90,11 @@ declare namespace LocalJSX {
         "styleclass"?: string;
     }
     interface BgInput {
-        "condition"?: (value: string) => boolean;
-        "label"?: string;
+        "name"?: string;
         "onInputChange"?: (event: BgInputCustomEvent<string>) => void;
-    }
-    interface MyComponent {
-        "first"?: string;
-        "last"?: string;
-        "middle"?: string;
+        "placeholder"?: string;
+        "styleclass"?: string;
+        "value"?: string;
     }
     interface StCard {
     }
@@ -129,10 +105,8 @@ declare namespace LocalJSX {
     interface TsCardBottom {
     }
     interface IntrinsicElements {
-        "advanced-form": AdvancedForm;
         "bg-button": BgButton;
         "bg-input": BgInput;
-        "my-component": MyComponent;
         "st-card": StCard;
         "st-card-content": StCardContent;
         "st-card-header": StCardHeader;
@@ -143,10 +117,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "advanced-form": LocalJSX.AdvancedForm & JSXBase.HTMLAttributes<HTMLAdvancedFormElement>;
             "bg-button": LocalJSX.BgButton & JSXBase.HTMLAttributes<HTMLBgButtonElement>;
             "bg-input": LocalJSX.BgInput & JSXBase.HTMLAttributes<HTMLBgInputElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "st-card": LocalJSX.StCard & JSXBase.HTMLAttributes<HTMLStCardElement>;
             "st-card-content": LocalJSX.StCardContent & JSXBase.HTMLAttributes<HTMLStCardContentElement>;
             "st-card-header": LocalJSX.StCardHeader & JSXBase.HTMLAttributes<HTMLStCardHeaderElement>;

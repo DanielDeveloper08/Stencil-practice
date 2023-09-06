@@ -4,48 +4,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
 
 
-<title>Stencil Component Starter</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<title>CLEO Components</title>
 <script type="module" src="/build/prueba-componente.esm.js"></script>
 <script nomodule src="/build/prueba-componente.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<style>
-  .moreDetail {
-    text-decoration: none;
-    color: #06c;
-  }
-
-  .moreDetail i {
-    color: #06c;
-    font-size: 12px;
-  }
-
-  .moreDetail:hover {
-    text-decoration: underline;
-  }
-</style>
-
-
 </head>
 
 <body>
-  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
-  <!-- Componente padre -->
-  
   <bg-button label="Iniciar Sesión" styleclass="w-50 btn-primary" disabled="true"></bg-button>
-<script>
-  const button = document.querySelector('bg-button');
-  button.addEventListener('onClick', event => { console.log('Evento: ',event)})
-</script>
+  <script>
+    const button = document.querySelector('bg-button');
+    button.addEventListener('onClick', event => { console.log('Evento: ',event)})
+  </script>
 
 
-<!-- 
-  <bg-input
-  label="Ingresa un número mayor a 10:"
-  errorMessage="El número debe ser mayor a 10"
-  condition={(value) => parseFloat(value) > 10}
-  onInputChange={(event) => console.log("Valor ingresado:", event.detail)}></bg-input> -->
-  <!-- <advanced-form></advanced-form> -->
+<bg-input name="Username" styleclass="w-50" placeholder="Username"></bg-input>
 
 
   <!-- <st-card>
